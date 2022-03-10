@@ -8,6 +8,7 @@
 body{
   background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
     font-family: 'Montserrat', sans-serif;
+    
     min-height:100vh;
 }
 
