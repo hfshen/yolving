@@ -5,8 +5,9 @@ html, body {
   height: 100%;
   width: 100%;
   position: relative;
-  font-family: "Comfortaa", cursive;
-  
+  /* font-family: "Comfortaa", cursive; */
+  font-family: 'Montserrat', sans-serif;
+
 }
 
 #container {
@@ -23,6 +24,8 @@ html, body {
   transition: transform 0.5s ease;
   color: #333344;
   transform: translatey(-100px) scale(1);
+  font-family: 'Montserrat', sans-serif;
+
 }
 #container #game {
   position: absolute;
@@ -30,11 +33,15 @@ html, body {
   right: 0;
   bottom: 0;
   left: 0;
+  font-family: 'Montserrat', sans-serif;
+
 }
 #container .instructions {
   margin: 0;
   padding: 0;
   font-size: 40px;
+  font-family: 'Montserrat', sans-serif;
+
 }
 
 
@@ -48,6 +55,8 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+
 }
 #container .game-over * {
   transition: opacity 0.5s ease, transform 0.5s ease;
@@ -59,9 +68,13 @@ html, body {
   margin: 0;
   padding: 0;
   font-size: 40px;
+  font-family: 'Montserrat', sans-serif;
+
 }
 
 #container .game-ready {
+  font-family: 'Montserrat', sans-serif;
+
   position: absolute;
   top: 0;
   left: 0;
@@ -74,6 +87,7 @@ html, body {
   
 }
 #container .game-ready #start-button {
+  
   transition: opacity 0.5s ease, transform 0.5s ease;
   opacity: 0;
   transform: translatey(-50px);
@@ -82,6 +96,7 @@ html, body {
   background-color: transparent;
   color: #333344;
   font-size: 40px;
+  font-family: 'Montserrat', sans-serif;
 }
 #container #instructions {
   position: absolute;
@@ -112,6 +127,7 @@ html, body {
 #container.ended .game-over * {
   opacity: 1;
   transform: translatey(0);
+  
 }
 #container.ended .game-over p {
   transition-delay: 0.3s;

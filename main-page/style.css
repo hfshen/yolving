@@ -17,7 +17,8 @@
 }
 
 .h3 {
-    font-family: "Raleway", sans-serif;
+    /* font-family: "Raleway", sans-serif; */
+    font-family: 'Montserrat', sans-serif;
     font-size: 100px;
 
 }
@@ -25,7 +26,8 @@
 
 
 h5 {
-    font-family: "Raleway", sans-serif;
+    /* font-family: "Raleway", sans-serif; */
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     font-size: 40px;
 }
@@ -53,6 +55,7 @@ body {
 body {
     margin: 0;
     font:32px/1.3 sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -265,7 +268,8 @@ body {
 /* $body-background: #353535; */
 
 @font-face {
-	font-family: "ubuntu";
+	/* font-family: "ubuntu"; */
+    font-family: 'Montserrat', sans-serif;
 	font-style: italic;
 	font-weight: 300;
 	src: local("Lato Light Italic"), local("Lato-LightItalic"),
@@ -276,8 +280,9 @@ body {
 body {
 	height: 100vh;
 	margin: 0;
-	background-color: $body-background;
-	font-family: "ubuntu", Arial, sans-serif;
+	background-color: body-background;
+	/* font-family: "ubuntu", Arial, sans-serif; */
+    font-family: 'Montserrat', sans-serif;
 	overflow-x: hidden;
 	display: grid;
 	place-items: center;
