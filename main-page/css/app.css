@@ -53,8 +53,8 @@ body {
  */
 
 .deck {
-    width: 825px;
-    height: 520px;
+    width: 880px;
+    height: 550px;
     background-color: #EEF4F9;
     padding: 30px;
     border-radius: 10px;
@@ -67,8 +67,8 @@ body {
 }
 
 .deck .card {
-    width: 140px;
-    height: 210px;
+    width: 150px;
+    height: 220px;
     background: #0a3d62;
     font-size: 0;
     color: #C7D4DF;
