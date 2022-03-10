@@ -5,21 +5,17 @@
 
     <meta charset="UTF-8">
 
-    <link rel="apple-touch-icon" type="image/png"
-        href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
-    <meta name="apple-mobile-web-app-title" content="CodePen">
-
-    <link rel="shortcut icon" type="image/x-icon"
-        href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
-
-    <link rel="mask-icon" type="image/x-icon"
-        href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
-        color="#111">
-
+        <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
+      
+    
 
     <title>멘자</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <meta name="theme-color" content="#2c3f51">
+    <!-- <link rel="stylesheet" href="../block/style.css"> -->
+	<link rel="stylesheet" href="../main-page/css/app.css">
+	<link rel="stylesheet" href="../main-page/css/style.css">
 
 
 
@@ -309,6 +305,26 @@
 </head>
 
 <body translate="no">
+
+<!-- 
+<div class="outer-menu">
+  <input class="checkbox-toggle" type="checkbox" />
+  <div class="hamburger">
+    <div></div>
+  </div>
+  <div class="menu">
+    <div>
+      <div>
+        <ul>
+          
+          <li><a href="../GAME_menja/index.html">다시시작</a></li>
+          <li><a href="../index.html">게임 나가기</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div> -->
+
     <!-- Game canvas -->
     <canvas id="c" width="1368" height="912" style="width: 1368px; height: 912px;"></canvas>
 
@@ -331,7 +347,8 @@
         <div class="menu menu--main active">
             <h1>멘자</h1>
             <button type="button" class="play-normal-btn">시작하기</button>
-            <button type="button" class="play-casual-btn">캐쥬얼모드</button>
+            <button type="button" class="play-casual-btn"> </button>
+            <li><a href="../index.html">게임 나가기</a></li>
             
         </div>
         <div class="menu menu--pause">
@@ -1696,11 +1713,11 @@
     resetGame();
   });
   
-  handleClick($('.play-casual-btn'), () => {
-    setGameMode(GAME_MODE_CASUAL);
-    setActiveMenu(null);
-    resetGame();
-  });
+  // handleClick($('.play-casual-btn'), () => {
+  //   setGameMode(GAME_MODE_CASUAL);
+  //   setActiveMenu(null);
+  //   resetGame();
+  // });
   
   // Pause Menu
   handleClick($('.resume-btn'), () => resumeGame());
@@ -1728,11 +1745,11 @@
     resetGame();
   });
   
-  handleClick($('.play-casual-btn'), () => {
-    setGameMode(GAME_MODE_CASUAL);
-    setActiveMenu(null);
-    resetGame();
-  });
+  // handleClick($('.play-casual-btn'), () => {
+  //   setGameMode(GAME_MODE_CASUAL);
+  //   setActiveMenu(null);
+  //   resetGame();
+  // });
   
   // Pause Menu
   handleClick($('.resume-btn'), () => resumeGame());
@@ -2540,7 +2557,6 @@
   setupCanvases();
   //# sourceURL=pen.js
       </script>
-
 
 
 

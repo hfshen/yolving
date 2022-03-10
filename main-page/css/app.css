@@ -53,8 +53,8 @@ body {
  */
 
 .deck {
-    width: 950px;
-    height: 600px;
+    width: 900px;
+    height: 550px;
     background-color: #EEF4F9;
     padding: 30px;
     border-radius: 10px;
@@ -122,7 +122,7 @@ body {
 .score-panel {
     text-align: left;
     width: 650px;
-    margin:60px 0 0 0;
+    margin:10px 10px 0 10px;
     color:rgb(0, 0, 0);
     padding:0 0px;
     font-weight: 700;
