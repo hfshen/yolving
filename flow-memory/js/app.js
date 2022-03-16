@@ -12,7 +12,8 @@ let possibleCards = baseCards.concat(baseCards); // duplicate array items to mak
 
 audioC = document.getElementById("myAudioCorrect");
 audioW = document.getElementById("myAudioWrong");
-
+audioStart = document.getElementById("flowMemory");
+audioFinish = document.getElementById("finishFocus");
 // ============================================
 // Global Variables
 // ============================================
@@ -64,6 +65,7 @@ function shuffle(array) {
 
 function initGame() {
  //document.querySelector{'.level'}.style.display = 'show';
+  audioStart.play();
   document.querySelector('.overlay').style.display = 'show';
   document.querySelector('.deck').innerHTML = '';
   shuffle(possibleCards);
@@ -260,6 +262,7 @@ const finishMsg = ['대충 하셨죠? 다시 도전해볼까요?','잘하셨습�
 
 
 function congrats() {
+  audioFinish.play();
   stopTimer();
   setTimeout(function(){
       // switch messages and images base on number of stars

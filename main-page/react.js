@@ -41,4 +41,10 @@ function showHighScores() {
   
     localStorage.setItem('highScores', JSON.stringify(highScores));
   }
-  
+
+
+// document.addEventListener("click", function(){soundplay();});
+
+// function soundplay(){
+//    audioArth.play();
+// }

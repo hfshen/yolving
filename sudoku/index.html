@@ -382,6 +382,12 @@
 </head>
 
 <body translate="no">
+  <audio id="audioSudoku">
+    <source src="../sound/game_sudoku.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="AudioFinish">
+      <source src="../sound/finish_good.mp3" type="audio/mpeg">
+      </audio>
   <!-- <a href="#" id="sidebar-toggle">
    <span class="bar"></span>
    <span class="bar"></span>
@@ -423,10 +429,12 @@
   <script src='./jquery.min.js'></script>
   <script id="rendered-js">
     /* Work in progress */
-
+    audioStart = document.getElementById("audioSudoku");
+    audioFinish = document.getElementById("AudioFinish");
     /**
     Sudoku game
     */
+   
     function Sudoku(params) {
       var t = this;
 
@@ -675,6 +683,7 @@
       }
       $('<div></div>').addClass('num remove').text('X').appendTo(sudoku_console);
       $('<div></div>').addClass('num note').text('?').appendTo(sudoku_console);
+      
 
       //draw gameover
       var sudoku_gameover = $(
@@ -969,7 +978,7 @@
     Sudoku.prototype.gameOver = function () {
       console.log('GAME OVER!');
       this.status = this.END;
-
+      audioFinish.play();
       $('#' + this.id + ' .gameover_container').show();
     };
 
@@ -1053,6 +1062,7 @@
       });
 
       game.run();
+      audioStart.play();
 
       // $('#sidebar-toggle').on('click', function (e) {
       //   $('#sudoku_menu').toggleClass("open-sidebar");

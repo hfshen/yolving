@@ -1,4 +1,5 @@
 "use strict";
+
 console.clear();
 class Stage {
     constructor() {
@@ -165,6 +166,7 @@ class Block {
 }
 class Game {
     constructor() {
+        this.audioC.play();
         this.STATES = {
             'LOADING': 'loading',
             'PLAYING': 'playing',
@@ -222,6 +224,9 @@ class Game {
                 break;
         }
     }
+    audioC = document.getElementById("gameBlock");
+    audioW = document.getElementById("gameFinish");
+
     startGame() {
         if (this.state != this.STATES.PLAYING) {
             this.scoreContainer.innerHTML = '0';
@@ -230,6 +235,7 @@ class Game {
         }
     }
     restartGame() {
+        
         this.updateState(this.STATES.RESETTING);
         let oldBlocks = this.placedBlocks.children;
         let removeSpeed = 0.2;
@@ -287,8 +293,11 @@ class Game {
         if (this.blocks.length >= 5)
             this.instructions.classList.add('hide');
     }
+    
     endGame() {
+        
         this.updateState(this.STATES.ENDED);
+        
     }
     tick() {
         this.blocks[this.blocks.length - 1].tick();
