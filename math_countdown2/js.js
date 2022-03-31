@@ -7,10 +7,14 @@ var arrAns = [];
 
 audioC = document.getElementById("myAudioCorrect");
 audioW = document.getElementById("myAudioWrong");
-
+audioS = document.getElementById("myAudioStart");
+audioE = document.getElementById("myAudioEnd");
+audioS.play();
 document.getElementById("startreset").onclick = function() {
+    
     if (playing == true) {
         location.reload();
+        
 
     } else {
         score = 0;
@@ -80,6 +84,7 @@ function count() {
                 show("gameOver");
                 document.getElementById("gameOver").innerHTML = "<p> 끝. 당신의 점수는 " + score +"점 입니다.</p>";
                 playing = false;
+                audioE.play();
             }
 
 

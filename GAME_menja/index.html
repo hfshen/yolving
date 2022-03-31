@@ -295,37 +295,29 @@
 
 
 
-  <script>
-    if (document.location.search.match(/type=embed/gi)) {
-      window.parent.postMessage("resize", "*");
-    }
-  </script>
 
 
 </head>
 
 <body translate="no">
-  <audio id="myAudioCorrect">
-    <source src="../math_countdown2/correct.mp3" type="audio/mpeg">
-  </audio>
-  <audio id="myAudioWrong">
-    <source src="../math_countdown2/wrong.mp3" type="audio/mpeg">
-  </audio>
+
+
   <audio id="myAudioStart">
-    <source src="../sound/game_cube.mp3" type="audio/mpeg">
+    <source src="../sound/game_sudoku.mp3" type="audio/mpeg">
   </audio>
   <audio id="myAudioEnd">
     <source src="../sound/finish_good.mp3" type="audio/mpeg">
   </audio>
 
+audioS =<docu</document>
   <!-- Game canvas -->
   <canvas id="c" width="1368" height="912" style="width: 1368px; height: 912px;"></canvas>
 
   <!-- Gameplay HUD -->
   <div class="hud" style="display: none;">
     <div class="hud__score">
-      <div class="score-lbl" style="display: block;">점수: 0</div>
-      <div class="cube-count-lbl" style="opacity: 0.65;">제거큐브수: 0</div>
+      <div class="score-lbl" style="display: block; margin-left: 200px">점수: 0</div>
+      <div class="cube-count-lbl" style="opacity: 0.65; margin-left: 200px">제거큐브수: 0</div>
     </div>
     <div class="pause-btn">
       <div></div>
@@ -337,7 +329,6 @@
 
   <!-- Menu System -->
   <div class="menus has-active">
-
     <div class="menu menu--main active">
       <h1>멘자</h1>
       <button type="button" class="play-normal-btn">시작하기</button>
@@ -357,7 +348,6 @@
       <div class="high-score-lbl"></div>
       <button type="button" class="play-again-btn">다시시작</button>
       <button type="button" class="menu-btn--score">메인메뉴</button>
-
     </div>
   </div>
   <script src="./script.js">
@@ -366,13 +356,13 @@
 
   <script id="rendered-js" type="module">
 
-
-    audioC = document.getElementById("myAudioCorrect");
-      audioW = document.getElementById("myAudioWrong");
-      audioS = document.getElementById("myAudioStart");
-      audioE = document.getElementById("myAudioEnd");
-      
-
+    // globalConfig.js
+  // ============================================================================
+  // ============================================================================
+  
+  // Provides global variables used by the entire program.
+  // Most of this should be configuration.
+  
   // Timing multiplier for entire game engine.
   let gameSpeed = 1;
   
@@ -493,7 +483,7 @@
     menus: {
       // Set to `null` to hide all menus
       active: MENU_MAIN } };
-      audioE.play();
+  
   
   
   
@@ -1690,7 +1680,6 @@
   
     setHudVisibility(!isMenuVisible());
     menuContainerNode.classList.toggle('has-active', isMenuVisible());
-    
     menuContainerNode.classList.toggle('interactive-mode', isMenuVisible() && pointerIsDown);
   }
   
@@ -2403,7 +2392,7 @@
     // resize fullscreen canvas
     window.addEventListener('resize', handleResize);
   
-  
+    
     // Run game loop
     let lastTimestamp = 0;
     function frameHandler(timestamp) {
