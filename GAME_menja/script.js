@@ -1,3 +1,5 @@
+
+
 window.HUB_EVENTS = {
     ASSET_ADDED: "ASSET_ADDED",
     ASSET_DELETED: "ASSET_DELETED",
@@ -56,6 +58,7 @@ window.HUB_EVENTS = {
     PROCESSING_START: "PROCESSED_STARTED"
 }, "object" != typeof window.CP && (window.CP = {}), window.CP.PenTimer = {
     programNoLongerBeingMonitored: !1,
+    
     timeOfFirstCallToShouldStopLoop: 0,
     _loopExits: {},
     _loopTimers: {},
@@ -63,10 +66,10 @@ window.HUB_EVENTS = {
     STOP_ALL_MONITORING_TIMEOUT: 5e3,
     MAX_TIME_IN_LOOP_WO_EXIT: 2200,
     exitedLoop: function (E) {
-        this._loopExits[E] = !0
+        this._loopExits[E] = !0, 
     },
     shouldStopLoop: function (E) {
-        if (this.programKilledSoStopMonitoring) return !0;
+        if (this.programKilledSoStopMonitoring) return !0; 
         if (this.programNoLongerBeingMonitored) return !1;
         if (this._loopExits[E]) return !1;
         var _ = this._getTime();
@@ -80,6 +83,7 @@ window.HUB_EVENTS = {
             return this._sendErrorMessageToEditor(), this.programKilledSoStopMonitoring = !0, !0
         }
         return !1
+
     },
     _sendErrorMessageToEditor: function () {
         try {
@@ -101,6 +105,7 @@ window.HUB_EVENTS = {
     },
     _throwAnErrorToStopPen: function () {
         throw "/"
+
     },
     _findAroundLineNumber: function () {
         var E = new Error,
@@ -124,4 +129,5 @@ window.HUB_EVENTS = {
     return !0 === _ && console.warn("[a]"), _
 }, window.CP.exitedLoop = function (E) {
     window.CP.PenTimer.exitedLoop(E)
+
 };
