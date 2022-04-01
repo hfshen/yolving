@@ -165,8 +165,10 @@ class Block {
     }
 }
 class Game {
+    audioS = document.getElementById("gameBlock");
+    audioE = document.getElementById("finishBlock");
     constructor() {
-        this.audioC.play();
+        this.audioS.play();
         this.STATES = {
             'LOADING': 'loading',
             'PLAYING': 'playing',
@@ -186,6 +188,7 @@ class Game {
         this.placedBlocks = new THREE.Group();
         this.choppedBlocks = new THREE.Group();
         this.stage.add(this.newBlocks);
+        
         this.stage.add(this.placedBlocks);
         this.stage.add(this.choppedBlocks);
         this.addBlock();
@@ -198,11 +201,9 @@ class Game {
         document.addEventListener('click', e => {
             this.onAction();
         });
+        
         document.addEventListener('touchstart', e => {
             e.preventDefault();
-            // this.onAction();
-            // ☝️ this triggers after click on android so you
-            // insta-lose, will figure it out later.
         });
     }
     updateState(newState) {
@@ -224,8 +225,7 @@ class Game {
                 break;
         }
     }
-    audioC = document.getElementById("gameBlock");
-    audioW = document.getElementById("gameFinish");
+    
 
     startGame() {
         if (this.state != this.STATES.PLAYING) {
@@ -282,8 +282,10 @@ class Game {
     }
     addBlock() {
         let lastBlock = this.blocks[this.blocks.length - 1];
+        
         if (lastBlock && lastBlock.state == lastBlock.STATES.MISSED) {
-            return this.endGame();
+            
+            return this.endGame();    
         }
         this.scoreContainer.innerHTML = String(this.blocks.length - 1);
         let newKidOnTheBlock = new Block(lastBlock);
@@ -295,7 +297,7 @@ class Game {
     }
     
     endGame() {
-        
+        this.audioE.play();
         this.updateState(this.STATES.ENDED);
         
     }

@@ -269,7 +269,7 @@ function congrats() {
       document.querySelector('.switch-msg').innerHTML = 
       `
         <h2>${finishMsg[numStars-1]}</h2>
-        <img src="img/animal/${finishImg[numStars-1]}.svg" alt="" width="100">
+        <img src="img/animal/${finishImg[numStars-1]}.svg" alt="" width="200">
       `
       document.querySelector('.overlay-content').classList.add('animated','bounceIn')
   }, 100);
