@@ -1,5 +1,4 @@
 
-
 window.HUB_EVENTS = {
     ASSET_ADDED: "ASSET_ADDED",
     ASSET_DELETED: "ASSET_DELETED",
@@ -131,3 +130,4 @@ window.HUB_EVENTS = {
     window.CP.PenTimer.exitedLoop(E)
 
 };
+
